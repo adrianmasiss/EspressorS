@@ -1,0 +1,13 @@
+data nat = {
+    Zero,
+    S(nat)
+}
+
+fun add(x:nat, y:nat) = match x with
+    Zero -> y
+    S(z) -> S(add(z, y))
+
+fun main() =
+    let zero = Zero in
+    let one = S(Zero) in
+    add(zero, one)
